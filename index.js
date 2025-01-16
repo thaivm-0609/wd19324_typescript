@@ -1,3 +1,4 @@
+"use strict";
 //CÚ PHÁP KHAI BÁO: var tenBien: kieuDuLieu = value; 
 //1. Kiểu dữ liệu cơ bản: Number/String/Boolean
 //1.1. Number (số)
@@ -24,7 +25,7 @@ var testArray1 = [1, 2, 3, 4, 5];
 console.log(testArray1[2]);
 //C2: dùng từ khóa Array<kieuDuLieuCuaCacPhanTu> (angle-bracket)
 //var tenMang: Array<kieuDuLieuCuaCacPhanTu> = [];
-var testArray2 = ['Một', "Hai", "Ba"];
+var testArray2 = ['Một', "Hai", `Ba`];
 //2.3. Tuple (là kiểu dữ liệu mới trong typescript)
 //khai báo kiểu dữ liệu cho từng phần tử ở trong mảng => biết trước số phần tử trong mảng
 var testTuple = [1, 'abc', false];
