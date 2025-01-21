@@ -63,7 +63,7 @@ function Home() {
                                 <img src={p.image} alt="" />
                             </td>
                             <td>
-                                <a className="btn btn-info" href="">Detail</a>
+                                <a className="btn btn-info" href={"/detail/"+p.id}>Detail</a>
                                 <a className="btn btn-warning" href="">Edit</a>
                                 <a className="btn btn-danger" onClick={() => delPro(p.id)}>Delete</a>
                             </td>

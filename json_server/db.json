@@ -1,23 +1,34 @@
 {
   "products": [
-      {
-          "id": 1,
-          "name": "Product 1",
-          "price": 100000,
-          "image": ""
-      },
-      {
-          "id": 2,
-          "name": "Product 2",
-          "price": 200000,
-          "image": ""
-      },
-      {
-          "id": 3,
-          "name": "Product 3",
-          "price": 300000,
-          "image": ""
-      }
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 100000,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 200000,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 300000,
+      "image": "https://picsum.photos/200"
+    }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "thaivm2@fe.edu.vn",
+      "password": "$2a$10$DkqEk1LBKr0aFlTr/yDawuAdBwyUtqnN/1w1SdKtYbtpPwOj53E3G",
+      "id": 1
+    },
+    {
+      "email": "thai@fpt.edu.vn",
+      "password": "$2a$10$dlH5nUNZPp1v4COMU0kcv.2Pn3UzPiJ9n4x0JzSxfauUrAWC4JhaS",
+      "id": 2
+    }
+  ]
 }
