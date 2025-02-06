@@ -1,12 +1,22 @@
 import axios from "axios" //để call api
 import { Product } from "../types/Product"
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+    //lấy accessToken từ trong localStorage
+    const token = localStorage.getItem('token');
+
+    const nav = useNavigate();
+
+    if (!token) { //nếu như không có token thì đẩy ng dùng về trang login
+        nav('/login');
+    } 
+    
+    //nếu có token thì cho vào trang danh sách
     //products: biến chứa dữ liệu
     //hàm setProducts: gán giá trị cho biến products
     const [products, setProducts] = useState<Product[]>([]);
-
     //khai báo hàm lấy dữ liệu
     const getList = async () => {
         try {

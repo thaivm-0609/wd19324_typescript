@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
+import Login from './pages/Login';
 
 const routeConfig = [
   { //router home
@@ -17,6 +18,10 @@ const routeConfig = [
   { //router register
     path: '/register',
     element: <Register/>,
+  },
+  {//router login
+    path: '/login',
+    element: <Login/>,
   },
   { //router not found
     path: '*',
