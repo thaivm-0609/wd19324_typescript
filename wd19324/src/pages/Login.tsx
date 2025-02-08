@@ -9,8 +9,9 @@ type LoginInput = {
 function Login() {
     const {
         register,
-        handleSubmit
-    } = useForm<LoginInput>({});
+        handleSubmit,
+        formState: { errors }
+    } = useForm<LoginInput>();
 
     const onSubmit: SubmitHandler<LoginInput> = async (data) => {
         try {
@@ -36,9 +37,18 @@ function Login() {
                         type="text"
                         id="email"
                         {
-                            ...register('email')
+                            ...register('email', {
+                                required: true,
+                                minLength: 3,
+                                pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+                            })
                         }
                     />
+                    {
+                        errors?.email && (
+                            <p>Email không hợp lệ</p>
+                        )
+                    }
                 </div>
                 <div>
                     <label htmlFor="">Password</label>
@@ -46,9 +56,17 @@ function Login() {
                         type="text"
                         id="password"
                         {
-                            ...register('password')
+                            ...register('password', {
+                                required: true,
+                                minLength: 6,
+                            })
                         }
                     />
+                    {
+                        errors?.password && (
+                            <p>Password không hợp lệ</p>
+                        )
+                    }
                 </div>
                 <button type="submit">Login</button>
             </form>

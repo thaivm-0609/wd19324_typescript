@@ -1,6 +1,9 @@
 import axios from "axios"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useNavigate } from "react-router-dom"; //điều hướng/chuyển trang
+//import joi de validate form
+import Joi from "joi";
+import { joiResolver } from "@hookform/resolvers/joi";
 
 //khai báo trường dữ liệu khi đăng ký
 type RegisterInput = {
@@ -9,10 +12,19 @@ type RegisterInput = {
 }
 
 function Register() {
+    //khai báo rule validate
+    const validateForm = Joi.object({
+        email: Joi.string().required().email({tlds:false}),
+        password: Joi.string().required().min(6),
+    });
+
     const {
         register,
-        handleSubmit
-    } = useForm<RegisterInput>();
+        handleSubmit,
+        formState: { errors }
+    } = useForm<RegisterInput>({
+        resolver: joiResolver(validateForm)
+    });
 
     const nav = useNavigate(); //dùng useNavigate để điều hướng
 
@@ -41,6 +53,11 @@ function Register() {
                             ...register('email')
                         }
                     />
+                    {
+                        errors?.email && (
+                            <p>{ errors?.email?.message }</p>
+                        )
+                    }
                 </div>
                 <div>
                     <label htmlFor="">Password</label>
@@ -51,6 +68,11 @@ function Register() {
                             ...register('password')
                         }
                     />
+                    {
+                        errors?.password && (
+                            <p>{ errors?.password?.message }</p>
+                        )
+                    }
                 </div>
                 <button type="submit">Register</button>
             </form>
