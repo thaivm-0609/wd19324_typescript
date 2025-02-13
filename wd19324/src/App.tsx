@@ -5,6 +5,8 @@ import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
 import Login from './pages/Login';
+import Create from './pages/Create';
+import Edit from './pages/Edit';
 
 const routeConfig = [
   { //router home
@@ -22,6 +24,14 @@ const routeConfig = [
   {//router login
     path: '/login',
     element: <Login/>,
+  },
+  {//router create
+    path: '/create',
+    element: <Create/>
+  },
+  {//router edit
+    path: '/edit/:id',
+    element: <Edit/>
   },
   { //router not found
     path: '*',

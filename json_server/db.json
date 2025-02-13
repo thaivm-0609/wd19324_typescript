@@ -17,6 +17,18 @@
       "name": "Product 3",
       "price": 300000,
       "image": "https://picsum.photos/200"
+    },
+    {
+      "name": "thaivm2",
+      "price": "1000",
+      "image": "",
+      "id": 4
+    },
+    {
+      "name": "abcxyz",
+      "price": "55555",
+      "image": "",
+      "id": 5
     }
   ],
   "users": [

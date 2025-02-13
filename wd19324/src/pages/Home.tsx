@@ -74,7 +74,7 @@ function Home() {
                             </td>
                             <td>
                                 <a className="btn btn-info" href={"/detail/"+p.id}>Detail</a>
-                                <a className="btn btn-warning" href="">Edit</a>
+                                <a className="btn btn-warning" href={"/edit/"+p.id}>Edit</a>
                                 <a className="btn btn-danger" onClick={() => delPro(p.id)}>Delete</a>
                             </td>
                         </tr>
