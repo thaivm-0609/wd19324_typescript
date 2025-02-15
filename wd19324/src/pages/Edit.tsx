@@ -33,6 +33,22 @@ function Edit() {
         }
     }
 
+    const nav = useNavigate();
+    const onEdit: SubmitHandler<ProductInput> = async (data) => {
+        try {
+            //B1: call api
+            const response = await axios.put(`http://localhost:3000/products/${id}`, data);
+            console.log(response);
+            //B2: xử lý sau khi call api thành công
+            if (response.status == 200) {
+                alert('Chỉnh sửa thành công');
+                nav('/');
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         if (!id) return;
         getDetail(id);
@@ -41,7 +57,7 @@ function Edit() {
     return (
         <div>
             <h1>Edit</h1>
-            <form>
+            <form onSubmit={handleSubmit(onEdit)}>
                 <div>
                     <label htmlFor="">Name</label>
                     <input 

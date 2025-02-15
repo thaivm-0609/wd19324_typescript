@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Product 1",
-      "price": 100000,
-      "image": "https://picsum.photos/200"
-    },
-    {
       "id": 2,
       "name": "Product 2",
       "price": 200000,
@@ -19,15 +13,15 @@
       "image": "https://picsum.photos/200"
     },
     {
-      "name": "thaivm2",
-      "price": "1000",
-      "image": "",
+      "name": "thaivm88888",
+      "price": "100088888",
+      "image": "https://picsum.photos/200/300",
       "id": 4
     },
     {
-      "name": "abcxyz",
-      "price": "55555",
-      "image": "",
+      "name": "abcxyz111222",
+      "price": "55555222233",
+      "image": "https://picsum.photos/100/100",
       "id": 5
     }
   ],
